@@ -8,11 +8,14 @@ import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 import java.util.concurrent.TimeUnit;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 public class Main {
 
   public static void main(String[] args) {
-    Menu();
+    Home();
   }
 
   public static void wait(int ms) {
@@ -57,7 +60,6 @@ public class Main {
 
 
     wait(5000);
-    frame.setVisible(false);
     frame.dispose();
     CopyrightScreen();
   }
@@ -84,9 +86,9 @@ public class Main {
 
     copyrightFrame.add(copyrightlabel);
     
-    wait(5000);
-    copyrightFrame.setVisible(false);
+    wait(3000);
     copyrightFrame.dispose();
+    Menu();
   }
 
   static void CitricServices() {
@@ -117,6 +119,8 @@ public class Main {
     GraphicsEnvironment graphics = GraphicsEnvironment.getLocalGraphicsEnvironment();
     GraphicsDevice device = graphics.getDefaultScreenDevice();
 
+
+    // Account Label (Username and Profile Picture)
     Font font4 = new Font("Arial", Font.BOLD, 20);
     JLabel accountlab = new JLabel("Account");
     accountlab.setHorizontalAlignment(SwingConstants.LEFT);
@@ -124,6 +128,14 @@ public class Main {
     accountlab.setForeground(Color.WHITE);
     accountlab.setText("Account: " + null);
     accountlab.setFont(font4);
+    accountlab.setBounds(0,0,0,0);
+
+    JLabel currenttimelab = new JLabel("Time");
+    currenttimelab.setHorizontalAlignment(SwingConstants.RIGHT);
+    currenttimelab.setVerticalAlignment(SwingConstants.TOP);
+    currenttimelab.setForeground(Color.WHITE);
+    currenttimelab.setFont(font4);
+    currenttimelab.setBounds(0,0,0,0);
 
     javax.swing.JFrame menuFrame = new JFrame();
     menuFrame.setDefaultCloseOperation(javax.swing.JFrame.EXIT_ON_CLOSE);
@@ -132,7 +144,13 @@ public class Main {
     menuFrame.setVisible(true);
     menuFrame.getContentPane().setBackground(new java.awt.Color(44, 47, 51));
     menuFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+    menuFrame.setLayout(new GridLayout(1, 1));
 
     menuFrame.add(accountlab);
+    menuFrame.add(currenttimelab);
+
+
+    LocalDate date = LocalDate.now();
+    currenttimelab.setText("" + date);
   }
 }
