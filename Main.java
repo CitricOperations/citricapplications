@@ -91,30 +91,6 @@ public class Main {
     Menu();
   }
 
-  static void CitricServices() {
-    GraphicsEnvironment graphics = GraphicsEnvironment.getLocalGraphicsEnvironment();
-    GraphicsDevice device = graphics.getDefaultScreenDevice();
-
-    Font font2 = new Font("Arial", Font.BOLD, 40);
-    JLabel servicelabel = new JLabel("Services.");
-    servicelabel.setHorizontalAlignment(SwingConstants.CENTER);
-    servicelabel.setVerticalAlignment(SwingConstants.CENTER);
-    servicelabel.setForeground(Color.WHITE);
-    servicelabel.setText("Citric Services");
-    servicelabel.setFont(font2);
-
-    javax.swing.JFrame serviceFrame = new JFrame();
-    serviceFrame.setDefaultCloseOperation(javax.swing.JFrame.EXIT_ON_CLOSE);
-    serviceFrame.setUndecorated(true);
-    serviceFrame.setResizable(false);
-    serviceFrame.setVisible(true);
-    serviceFrame.getContentPane().setBackground(new java.awt.Color(44, 47, 51));
-    serviceFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-
-    // add objects to frame
-    serviceFrame.add(servicelabel);
-  }
-
   static void Menu() {
     GraphicsEnvironment graphics = GraphicsEnvironment.getLocalGraphicsEnvironment();
     GraphicsDevice device = graphics.getDefaultScreenDevice();
