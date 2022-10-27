@@ -14,24 +14,17 @@ import java.time.LocalTime;
 
 public class Services {
 
-
-  /*
-  *
-  * Defines sleep action, which pauses the program temporarily, can be called with wait(time in ms);
-  *
-  */
+  // Defines sleep action, which pauses the program temporarily, can be called with wait(time in ms);
   public static void wait(int ms) {
     try {
       Thread.sleep(ms);
-    }
-    catch(InterruptedException ex) {
+    } catch (InterruptedException ex) {
       Thread.currentThread().interrupt();
     }
   }
-  
-  static public void main(String[] args) {
 
-    
+  public static void main(String[] args) {
+    wait(8000);
+    System.out.println("Starting Citrus Services v0.0.01");
   }
-  
 }
