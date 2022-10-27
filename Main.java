@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 public class Main {
 
   public static void main(String[] args) {
-    Home();
+    Menu();
   }
 
   public static void wait(int ms) {
@@ -56,7 +56,7 @@ public class Main {
      */
 
 
-    wait(3000);
+    wait(5000);
     frame.setVisible(false);
     frame.dispose();
     CopyrightScreen();
@@ -66,9 +66,9 @@ public class Main {
     GraphicsEnvironment graphics = GraphicsEnvironment.getLocalGraphicsEnvironment();
     GraphicsDevice device = graphics.getDefaultScreenDevice();
 
-    Font font3 = new Font("DialogInput", Font.BOLD, 15);
+    Font font3 = new Font("DialogInput", Font.BOLD, 50);
     JLabel copyrightlabel = new JLabel("Copyright");
-    copyrightlabel.setHorizontalAlignment(SwingConstants.RIGHT);
+    copyrightlabel.setHorizontalAlignment(SwingConstants.CENTER);
     copyrightlabel.setVerticalAlignment(SwingConstants.CENTER);
     copyrightlabel.setForeground(Color.WHITE);
     copyrightlabel.setText("(C)INFRARED STUDIOS");
@@ -83,6 +83,10 @@ public class Main {
     copyrightFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 
     copyrightFrame.add(copyrightlabel);
+    
+    wait(5000);
+    copyrightFrame.setVisible(false);
+    copyrightFrame.dispose();
   }
 
   static void CitricServices() {
@@ -107,5 +111,28 @@ public class Main {
 
     // add objects to frame
     serviceFrame.add(servicelabel);
+  }
+
+  static void Menu() {
+    GraphicsEnvironment graphics = GraphicsEnvironment.getLocalGraphicsEnvironment();
+    GraphicsDevice device = graphics.getDefaultScreenDevice();
+
+    Font font4 = new Font("Arial", Font.BOLD, 20);
+    JLabel accountlab = new JLabel("Account");
+    accountlab.setHorizontalAlignment(SwingConstants.LEFT);
+    accountlab.setVerticalAlignment(SwingConstants.TOP);
+    accountlab.setForeground(Color.WHITE);
+    accountlab.setText("Account: " + null);
+    accountlab.setFont(font4);
+
+    javax.swing.JFrame menuFrame = new JFrame();
+    menuFrame.setDefaultCloseOperation(javax.swing.JFrame.EXIT_ON_CLOSE);
+    menuFrame.setUndecorated(true);
+    menuFrame.setResizable(false);
+    menuFrame.setVisible(true);
+    menuFrame.getContentPane().setBackground(new java.awt.Color(44, 47, 51));
+    menuFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+
+    menuFrame.add(accountlab);
   }
 }
