@@ -30,6 +30,9 @@ public class Main {
   }
   
   static void Settings() {
+
+    Font settingsFont = new Font("DialogInput", Font.BOLD, 20);
+    
     javax.swing.JFrame setsFrame = new JFrame();
     setsFrame.setDefaultCloseOperation(javax.swing.JFrame.EXIT_ON_CLOSE);
     setsFrame.setUndecorated(true);
@@ -45,10 +48,21 @@ public class Main {
     backhome.setVerticalAlignment(SwingConstants.TOP);
     backhome.setForeground(Color.WHITE);
     backhome.setIcon(new ImageIcon("BackHome.png"));
-    backhome.setText(" ");
-    backhome.setBounds(0,0,60,60);
+    backhome.setText(" HOME");
+    backhome.setBounds(0,0,120,60);
+    backhome.setFont(settingsFont);
+
+    JLabel devmode = new JLabel("Developers");
+    devmode.setHorizontalAlignment(SwingConstants.LEFT);
+    devmode.setVerticalAlignment(SwingConstants.TOP);
+    devmode.setForeground(Color.WHITE);
+    devmode.setIcon(new ImageIcon("DevMode.png"));
+    devmode.setText("DEVMODE");
+    devmode.setFont(settingsFont);
+    devmode.setBounds(0,70,170,60);
 
     setsFrame.add(backhome);
+    setsFrame.add(devmode);
 
     // Button to go back home
     backhome.addMouseListener(new MouseAdapter() {
@@ -58,6 +72,8 @@ public class Main {
         Menu();
       }
     });
+
+    
   }
   
   static void Home() {
