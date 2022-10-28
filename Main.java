@@ -73,6 +73,14 @@ public class Main {
       }
     });
 
+    devmode.addMouseListener(new MouseAdapter() {
+      public void mouseClicked(MouseEvent e) {
+        setsFrame.setVisible(false);
+        setsFrame.dispose();
+        // In the future, put a terminal open function here
+      }
+    });
+
     
   }
   
