@@ -108,7 +108,7 @@ public class Main {
     accountlab.setText(" ");
     accountlab.setIcon(new ImageIcon("DefaultAvatar.png"));
     accountlab.setFont(font4);
-    accountlab.setBounds(0,0,0,0);
+    accountlab.setBounds(0,0,60,60);
 
     JLabel shutdownlab = new JLabel("Shutdown");
     shutdownlab.setHorizontalAlignment(SwingConstants.LEFT);
@@ -117,12 +117,7 @@ public class Main {
     shutdownlab.setText(" ");
     shutdownlab.setIcon(new ImageIcon("TransSettings.png"));
     shutdownlab.setFont(font4);
-    shutdownlab.setBounds(0,0,0,0);
-    shutdownlab.addMouseListener(new MouseAdapter() {
-      public void mouseClicked(MouseEvent e) {
-        System.out.println("Shutting Down..");
-      }
-    });
+    shutdownlab.setBounds(5,70,50,50);
     
     javax.swing.JFrame menuFrame = new JFrame();
     menuFrame.setDefaultCloseOperation(javax.swing.JFrame.EXIT_ON_CLOSE);
@@ -131,10 +126,25 @@ public class Main {
     menuFrame.setVisible(true);
     menuFrame.getContentPane().setBackground(new java.awt.Color(44, 47, 51));
     menuFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-    menuFrame.setLayout(new GridLayout(10, 14));
+    menuFrame.setLocationRelativeTo(null);
+    menuFrame.setLayout(null);
 
     menuFrame.add(accountlab);
     menuFrame.add(shutdownlab);
+
+      shutdownlab.addMouseListener(new MouseAdapter() {
+      public void mouseClicked(MouseEvent e) {
+        javax.swing.JFrame settingFrame = new JFrame();
+        settingFrame.setDefaultCloseOperation(javax.swing.JFrame.EXIT_ON_CLOSE);
+        settingFrame.setUndecorated(true);
+        settingFrame.setResizable(false);
+        settingFrame.setVisible(true);
+        menuFrame.setVisible(false);
+        settingFrame.getContentPane().setBackground(new java.awt.Color(44, 47, 51));
+        settingFrame.setLocationRelativeTo(null);
+        settingFrame.setLayout(null);
+      }
+    });
 
   }
 
