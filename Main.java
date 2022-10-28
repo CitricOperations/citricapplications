@@ -29,6 +29,37 @@ public class Main {
     }
   }
   
+  static void Settings() {
+    javax.swing.JFrame setsFrame = new JFrame();
+    setsFrame.setDefaultCloseOperation(javax.swing.JFrame.EXIT_ON_CLOSE);
+    setsFrame.setUndecorated(true);
+    setsFrame.setResizable(false);
+    setsFrame.setVisible(true);
+    setsFrame.getContentPane().setBackground(new java.awt.Color(44, 47, 51));
+    setsFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+    setsFrame.setLocationRelativeTo(null);
+    setsFrame.setLayout(null);
+
+    JLabel backhome = new JLabel("BackHome");
+    backhome.setHorizontalAlignment(SwingConstants.LEFT);
+    backhome.setVerticalAlignment(SwingConstants.TOP);
+    backhome.setForeground(Color.WHITE);
+    backhome.setIcon(new ImageIcon("BackHome.png"));
+    backhome.setText(" ");
+    backhome.setBounds(0,0,60,60);
+
+    setsFrame.add(backhome);
+
+    // Button to go back home
+    backhome.addMouseListener(new MouseAdapter() {
+      public void mouseClicked(MouseEvent e) {
+        setsFrame.setVisible(false);
+        setsFrame.dispose();
+        Menu();
+      }
+    });
+  }
+  
   static void Home() {
 
 
@@ -132,17 +163,11 @@ public class Main {
     menuFrame.add(accountlab);
     menuFrame.add(shutdownlab);
 
-      shutdownlab.addMouseListener(new MouseAdapter() {
+    shutdownlab.addMouseListener(new MouseAdapter() {
       public void mouseClicked(MouseEvent e) {
-        javax.swing.JFrame settingFrame = new JFrame();
-        settingFrame.setDefaultCloseOperation(javax.swing.JFrame.EXIT_ON_CLOSE);
-        settingFrame.setUndecorated(true);
-        settingFrame.setResizable(false);
-        settingFrame.setVisible(true);
         menuFrame.setVisible(false);
-        settingFrame.getContentPane().setBackground(new java.awt.Color(44, 47, 51));
-        settingFrame.setLocationRelativeTo(null);
-        settingFrame.setLayout(null);
+        menuFrame.dispose();
+        Settings();
       }
     });
 
